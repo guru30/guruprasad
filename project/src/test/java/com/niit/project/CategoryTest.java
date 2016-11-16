@@ -1,15 +1,12 @@
- package com.niit.project;
+package com.niit.project;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.stereotype.Component;
 
 import com.niit.project.Dao.CategoryDao;
 import com.niit.project.model.Category;
-import java.util.*;
 
 
-@Component
-public class CategoryTest  {
+public class CategoryTest {
 
 	
 	public static void main(String[] args) {
@@ -34,13 +31,11 @@ public class CategoryTest  {
 		
 		Category category = (Category) context.getBean("category");
 		
-		category.setId("58");
-		category.setName("prasad");
-		category.setDescription("Nothing can defend him  ");
-	
-	
+		category.setId("46");
+		category.setName("mobile");
+		category.setDescription("This is mobile");
 		
-		categoryDao.saveOrUpdate(category);
+		categoryDao.save(category);
 		
 		
 		

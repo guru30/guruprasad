@@ -19,7 +19,7 @@ public class CategoryTestCase1 {
 	AnnotationConfigApplicationContext context;
 	
 	@Autowired
-	CategoryDao categoryDaoimpl; 
+	CategoryDao categoryDaoimpl;
 	
 	@Autowired
 	Category category;
@@ -28,7 +28,7 @@ public class CategoryTestCase1 {
 	public void init()
 	{
 		context = new AnnotationConfigApplicationContext();
-		context.scan("com.niit.project");
+		context.scan("com.niit");
 		context.refresh();
 		category =(Category) context.getBean("category");
 		categoryDaoimpl =(CategoryDao) context.getBean("categoryDaoimpl");
@@ -37,25 +37,25 @@ public class CategoryTestCase1 {
 	@Test
 	public void createCategoryTestCase1()
 	{
-		category.setId("lap24");
-		category.setName("LENOVO1");
-		category.setDescription("LENOVO1 laptop");
+		category.setId("lap01");
+		category.setName("dell");
+		category.setDescription("dell laptop");
 		
-		//Assert.assertEquals("Create Category",true, categoryDaoimpl.save(category));
+		Assert.assertEquals("Create Category",true, categoryDaoimpl.save(category));
 	}
 	@Test
 	public void updateCategoryTestCase1()
 	{
-		category.setId("lap23");
-		category.setName("laptop");
-		category.setDescription(" laptop");
+		category.setId("lap01");
+		category.setName("hp");
+		category.setDescription("hp laptop");
 		
-		//Assert.assertEquals(true,categoryDaoimpl.update(category) );
+		Assert.assertEquals(true,categoryDaoimpl.update(category) );
 	}
 	@Test
 	public void deleteCategoryTestCase1()
 	{
-	//Assert.assertEquals("delete Category",true, categoryDaoimpl.delete("lap20"));	
+	Assert.assertEquals(true, categoryDaoimpl.delete("lapoq"));	
 	}
     @Test
 	public void getCategotyTestCase1()

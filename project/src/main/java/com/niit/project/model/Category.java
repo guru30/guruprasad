@@ -1,41 +1,18 @@
 package com.niit.project.model;
 
-
- 
-import java.io.Serializable;
-import java.util.Set;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 import org.springframework.stereotype.Component;
 @Entity
-@Table(name="CATEGORY")
+@Table(name="Category")
 @Component
-public class Category implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+public class Category {
 	@Id
 	private String id;
 	private String name;
 	private String description;
-	private Set<Product> products;
-	
-	@Transient
-	@OneToMany(mappedBy="category",fetch = FetchType.EAGER)
-	public Set<Product> getProducts() {
-		return products;
-	}
-	public void setProducts(Set<Product> products) {
-		this.products = products;
-	}
-	@Id
-	@Column(name="ID")
 	public String getId() {
 		return id;
 	}
